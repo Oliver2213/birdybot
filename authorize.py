@@ -15,4 +15,5 @@ tokens = auth.get_access_token(verifier=pin)
 tokenfile= open("keys.py","w")
 tokenfile.write(tokens[0]+'\n')
 tokenfile.write(tokens[1]+'\n')
+tokenfile.close()
 print "The tokens should now be saved in secrets.py"
