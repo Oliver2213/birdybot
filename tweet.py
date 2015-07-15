@@ -9,4 +9,4 @@ auth.set_access_token(token, token_secret)
 api = tweepy.API(auth)
 # form our tweet
 tweet = sys.argv[1]
-api.update_status("testing...")
+api.update_status(None, tweet)
