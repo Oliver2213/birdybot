@@ -13,7 +13,7 @@ print "Pin:"
 pin = raw_input().strip()
 tokens = auth.get_access_token(verifier=pin)
 tokenfile= open("keys.py","w")
-tokenfile.write(tokens[0]+'\n')
-tokenfile.write(tokens[1]+'\n')
+tokenfile.write("token = "+tokens[0]+'\n')
+tokenfile.write("token_secret = "+tokens[1]+'\n')
 tokenfile.close()
-print "The tokens should now be saved in secrets.py"
+print "The tokens should now be saved in keys.py"
