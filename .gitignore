@@ -1,5 +1,4 @@
 # Don't allow secret keys and tokens to be pushed to git.
 keys.py
 secrets.py
-keys.pyc
-secrets.pyc
+*.pyc
