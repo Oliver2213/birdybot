@@ -19,12 +19,10 @@ class StdOutListener(tweepy.StreamListener):
         print(status)
         return True
 
-    def on_direct_message( self, status ):
+    def on_direct_message(self, status):
         print("Direct message received.")
         try:
-            # This needs to be able to pull the name, screenname, and message into variables, not sure how
-            #Now it's just printing raw JSON, but I'm sure tweepy is doing some parsing...
-            print(status.text)
+            print(status.direct_message['sender_screen_name']+" says, \""+status.direct_message['text']+"\"")
             return True
         except BaseException as e:
             print("Failed on_direct_message()", str(e))
@@ -40,8 +38,7 @@ def main():
         stream = tweepy.Stream(auth, StdOutListener())
         stream.userstream()
 
-    except BaseException as e:
-        print("Error in main()", e)
-
+    except KeyboardInterrupt:
+        print('goodbye!')
 if __name__ == '__main__':
-    main()
+    main    ()
