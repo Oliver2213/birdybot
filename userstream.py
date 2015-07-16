@@ -16,7 +16,7 @@ class StdOutListener(tweepy.StreamListener):
         print("Connection to twitter lost!! : ", notice)
 
     def on_status( self, status ):
-        print(status)
+        print(status.user.name+" says, \""+status.text+"\"")
         return True
 
     def on_direct_message(self, status):
