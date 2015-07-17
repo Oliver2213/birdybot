@@ -14,3 +14,8 @@ def get_api():
     auth.set_access_token(token, token_secret)
     api = tweepy.API(auth)
     return api
+def get_auth():
+    """function to get the tweepy auth object for the keys imported."""
+    auth = tweepy.OAuthHandler(c_key, c_secret)
+    auth.set_access_token(token, token_secret)
+    return auth
